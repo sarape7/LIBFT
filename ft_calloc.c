@@ -6,7 +6,7 @@
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 10:26:48 by sarperez          #+#    #+#             */
-/*   Updated: 2023/10/13 12:20:19 by sarperez         ###   ########.fr       */
+/*   Updated: 2023/10/13 12:51:48 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(t, count * size);
 	return (t);
 }
-
+/*
 int main()
 {
 	int		*p;
@@ -36,3 +36,4 @@ int main()
 		i++;
 	}
 }
+*/

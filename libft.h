@@ -6,7 +6,7 @@
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 12:52:00 by sarperez          #+#    #+#             */
-/*   Updated: 2023/10/13 12:21:59 by sarperez         ###   ########.fr       */
+/*   Updated: 2023/10/13 12:48:31 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ int		ft_tolower(int c);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
 
 #endif
