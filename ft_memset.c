@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sarperez <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:59:49 by sarperez          #+#    #+#             */
-/*   Updated: 2023/09/20 11:19:14 by sarperez         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:19:06 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<unistd.h>
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *ptr, int value, size_t num)
 {

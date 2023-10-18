@@ -3,51 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sarperez <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 13:49:03 by sarperez          #+#    #+#             */
-/*   Updated: 2023/09/26 11:51:29 by sarperez         ###   ########.fr       */
+/*   Created: 2023/10/13 16:28:20 by sarperez          #+#    #+#             */
+/*   Updated: 2023/10/18 11:26:12 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stddef.h>
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strnstr(const char	*haystack, const char *needle, size_t n)
+char	*ft_strnstr(const char *uno, const char *dos, size_t n)
 {
-	char	*result;
+	size_t	dos_len;
+	size_t	i;
 
-	result = strstr(haystack, needle);
-	if (result && (size_t)(result - haystack) < n)
+	if (*dos == '\0')
+		return ((char *)uno);
+	dos_len = strlen(dos);
+	i = 0;
+	while (*uno && i + dos_len <= n)
 	{
-		return (result);
+		if (*uno == *dos && ft_memcmp(uno, dos, dos_len) == 0)
+			return ((char *)uno);
+	uno++;
+	i++;
 	}
-	else
-	{
-		return (NULL);
-	}
+	return (NULL);
 }
 /*
-int main()
+int main(void)
 {
-	const char	*haystack;
-	const char	*needle;
+	const char	*s;
+	const char	*dos;
 	size_t		n;
 	char		*result;
 
-	haystack = "Hello, world!";
-	needle = "world";
-	n = 13;
-	result = ft_strnstr(haystack, needle, n);
+s = "Hello, world!";
+dos = "world";
+n = 13;
+result = ft_strnstr(s, dos, n);
+
 	if (result != NULL)
-	{
-		printf("'%s' se encontró  %ld\n ", needle, (size_t)(result - haystack));
-	}
+		printf("'%s' se hayó en la posición %ld\n", dos, (size_t)(result - s));
 	else
-	{
-		printf("La subcadena '%s' no se encontró.\n", needle);
-	}
+		printf("La subcadena '%s' no se encontró.\n", dos);
 	return (0);
-}
-*/
+}*/

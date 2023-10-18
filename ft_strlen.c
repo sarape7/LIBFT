@@ -6,14 +6,13 @@
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 12:31:37 by sarperez          #+#    #+#             */
-/*   Updated: 2023/09/29 13:20:52 by sarperez         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:19:30 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<stdio.h>
+#include "libft.h"
 
-size_t	strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 

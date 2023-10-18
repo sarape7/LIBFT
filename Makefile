@@ -6,7 +6,7 @@
 #    By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/26 12:49:34 by sarperez          #+#    #+#              #
-#    Updated: 2023/10/13 12:48:47 by sarperez         ###   ########.fr        #
+#    Updated: 2023/10/18 11:36:02 by sarperez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRC = 				ft_isalpha.c \
 					ft_atoi.c \
 					ft_calloc.c \
 					ft_strdup.c \
+					ft_substr.c \
 
 OBJ = $(SRC:%.c=%.o)
 FLAGS = -Wall -Werror -Wextra
@@ -43,7 +44,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
-	gcc $(FLAGS) $(SRC)
 
 clean: 
 	rm -f $(OBJ)

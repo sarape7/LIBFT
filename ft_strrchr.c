@@ -6,12 +6,11 @@
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:30:48 by sarperez          #+#    #+#             */
-/*   Updated: 2023/09/26 13:24:08 by sarperez         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:21:53 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
-#include<stdio.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char	*str, int character)
 {
