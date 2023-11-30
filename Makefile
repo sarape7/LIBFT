@@ -6,7 +6,7 @@
 #    By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/26 12:49:34 by sarperez          #+#    #+#              #
-#    Updated: 2023/10/18 11:36:02 by sarperez         ###   ########.fr        #
+#    Updated: 2023/11/30 18:23:12 by sarperez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,8 @@ SRCS = 				ft_isalpha.c \
 					ft_strdup.c \
 					ft_substr.c \
 					ft_strjoin.c \
+					ft_strtrim.c \
+					ft_split.c \
 
 					OBJECTS = $(SRCS:.c=.o)
 BONUS_OBJECTS = $(BONUS_SRCS:.c=.o)
@@ -49,8 +51,8 @@ $(NAME): $(OBJECTS)
 	ar rc $(NAME) $(OBJECTS)
 	gcc $(CFLAGS) -c $(SRCS)
 
-bonus: $(BONUS_OBJECTS)
-	ar rc $(NAME) $(BONUS_OBJECTS)
+#bonus: $(BONUS_OBJECTS)
+#	ar rc $(NAME) $(BONUS_OBJECTS)
 
 clean:
 	$(RM) $(OBJECTS) $(BONUS_OBJECTS)

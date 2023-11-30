@@ -6,51 +6,41 @@
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:45:36 by sarperez          #+#    #+#             */
-/*   Updated: 2023/10/13 13:07:21 by sarperez         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:58:56 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char	*s1, const char	*s2, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	while (n > 0 && *s1 != '\0' && *s2 != '\0')
+	size_t	i;
+
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	i = 0;
+	while (src[i] && i < dstsize - 1)
 	{
-		if (*s1 != *s2)
-		{
-			return (*s1 - *s2);
-		}
-		s1++;
-		s2++;
-		n--;
+		dst[i] = src[i];
+		i++;
 	}
-	if (n > 0 && *s1 != *s2)
-	{
-		return (*s1 - *s2);
-	}
-	return (0);
+	if (dstsize > 0)
+		dst[i] = '\0';
+	return (ft_strlen(src));
 }
 
 /*
 int main()
 {
-    const char	*str1 = "Hello, world!";
-    const char	*str2 = "Hello, universe!";
-    size_t		n = 6;
-    int			result;
+    char dst[50];
+    const char *src = "Hello, world!";
+    size_t dstsize = 20;
+    size_t result;
 
-    result = ft_strncmp(str1, str2, n);
-    if (result == 0)
-    {
-        printf("Las cadenas son iguales en los primeros %zu caracteres.\n", n);
-    }
-    else if (result < 0)
-    {
-        printf("La primera cadena es menor que la segunda.\n");
-    }
-    else
-    {
-        printf("La primera cadena es mayor que la segunda.\n");
-    }
-    return (0);
+    result = ft_strlcpy(dst, src, dstsize);
+    printf("Copied string: %s\n", dst);
+    printf("Length of source string: %zu\n", result);
+
+    return 0;
+
 }*/

@@ -6,7 +6,7 @@
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 10:26:48 by sarperez          #+#    #+#             */
-/*   Updated: 2023/10/13 12:51:48 by sarperez         ###   ########.fr       */
+/*   Updated: 2023/11/30 13:35:45 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*t;
 
 	t = malloc(count * size);
+	if (!t)
+		return (NULL);
 	ft_bzero(t, count * size);
 	return (t);
 }
+
 /*
 int main()
 {

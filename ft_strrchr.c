@@ -6,44 +6,41 @@
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:30:48 by sarperez          #+#    #+#             */
-/*   Updated: 2023/10/13 13:21:53 by sarperez         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:47:38 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_strrchr(const char	*str, int character)
+char	*ft_strrchr(const char *s, int c)
 {
-	char	*lastoccurrence;
+	int		i;
 
-	lastoccurrence = NULL;
-	while (*str != '\0')
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
-		if (*str == (char)character)
-		{
-			lastoccurrence = (char *)str;
-		}
-		str++;
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i--;
 	}
-	if (character == '\0')
-	{
-		return ((char *)str);
-	}
-	return (lastoccurrence);
+	return (NULL);
 }
 /*
 int main ()
 {
-	const char *str;
-	int			chartofind;
+	const char	*s;
+	int			c;
 	char		*result;
-	str = "Hello, world!";
-	chartofind = 'o';
-	result = ft_strrchr(str, chartofind);
-	if(result != NULL)*/
-/*		printf("El carácter '%c' se encontró por última vez en %ld\n",
-		chartofind, result - str);*//*
+
+	s = "teste";
+	c = 'e';
+	result = ft_strrchr(s, c);
+
+	if(result != NULL)
+		printf("El carácter '%c' se encontró por última vez en %ld\n",
+			c, result - s);
 	else
-		printf("El carácter '%c' no se encontró en.\n", chartofind);
+		printf("El carácter '%c' no se encontró.\n", c);
 	return (0);
 }*/
