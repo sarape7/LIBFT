@@ -11,23 +11,38 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	i;
 
 	i = 0;
+	if (start >= ft_strlen(s))
+	{
+		str = (char *)malloc(sizeof(char) * 1);
+		if (!str)
+			return (NULL);
+		str[i] = '\0';
+		return (str);
+	}
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, &s[start], len + 1);
+	str[len] = '\0';
+	return (str);
 }
-
-int main ()
+/*
+int	main()
 {
-	char	*str;
-	size_t	l;
-	char	*buffer;
+	char			*str = "hola";
+	unsigned int	start = 2;
+	size_t			l = 3;
+	char			*buffer;
 
-	str = "Hola soy Sara";
-	l = 6;
 	buffer = ft_substr(str, start, l);
-	printf("%\n", buffer)
+	printf("%s\n", buffer);
 }*/

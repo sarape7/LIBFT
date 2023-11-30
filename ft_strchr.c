@@ -12,35 +12,33 @@
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int character)
+char	*ft_strchr(const char *s, int c)
 {
-	while (*str != '\0')
-	{
-		if (*str == (char)character)
-		{
-			return ((char *)str);
-		}
-		str++;
-	}
+	while (*s != (unsigned char)c && *s)
+		s++;
+	if (*s == (unsigned char)c)
+		return ((char *)s);
 	return (NULL);
 }
 /*
-int main()
+int	main()
 {
-	const char *str;
-	int charToFind;
-	char *result;
+	char 	str[] = "esto es super increible";
+	char	a = 'i';
+	char	*b;
+	int		i;
 
-	str = "Hello, world";
-	charToFind = 'w';
-	result = ft_strchr(str, charToFind);
-	if (result != NULL)
+	b = ft_strchr(str, a);
+	i = 0;
+	if (b != NULL)
 	{
-		printf("El carácter '%c' se encontró en %ld\n", charToFind, result - str);
+		while(b[i] != '\0')
+		{
+			write(1, &b[i], 1);
+			i++;
+		}
 	}
 	else
-	{
-		printf("El carácter '%c' no se encontró en la cadena.\n", charToFind);
-	}
-	return (0);
-}*/
+		write(1, "NULL", 4);
+}
+*/

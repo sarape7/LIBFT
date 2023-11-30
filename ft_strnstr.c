@@ -12,40 +12,35 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *uno, const char *dos, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	dos_len;
+	char	*ha;
+	char	*ne;
 	size_t	i;
+	size_t	n;
 
-	if (*dos == '\0')
-		return ((char *)uno);
-	dos_len = strlen(dos);
+	ha = (char *) haystack;
+	ne = (char *) needle;
 	i = 0;
-	while (*uno && i + dos_len <= n)
+	if (!ne[i])
+		return (ha);
+	while (i < len && ha[i])
 	{
-		if (*uno == *dos && ft_memcmp(uno, dos, dos_len) == 0)
-			return ((char *)uno);
-	uno++;
-	i++;
+		n = ft_strncmp(&ha[i], ne, ft_strlen(ne));
+		if (n == 0 && (i + ft_strlen(ne) <= len))
+			return (&ha[i]);
+		i++;
 	}
-	return (NULL);
+	return (0);
 }
 /*
-int main(void)
+int	main()
 {
-	const char	*s;
-	const char	*dos;
-	size_t		n;
-	char		*result;
+	char	*h = "lorem ipsum dolor sit amet";
+	char	*n = "dolor";
+	size_t	l = 15;
 
-s = "Hello, world!";
-dos = "world";
-n = 13;
-result = ft_strnstr(s, dos, n);
-
-	if (result != NULL)
-		printf("'%s' se hayó en la posición %ld\n", dos, (size_t)(result - s));
-	else
-		printf("La subcadena '%s' no se encontró.\n", dos);
-	return (0);
-}*/
+	printf("%s\n", strnstr(h, n, l));
+	printf("%s\n", ft_strnstr(h, n, l));
+}
+*/

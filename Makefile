@@ -12,7 +12,7 @@
 
 NAME = libft.a
 
-SRC = 				ft_isalpha.c \
+SRCS = 				ft_isalpha.c \
 					ft_isdigit.c \
 					ft_isalnum.c \
 					ft_isascii.c \
@@ -36,21 +36,28 @@ SRC = 				ft_isalpha.c \
 					ft_calloc.c \
 					ft_strdup.c \
 					ft_substr.c \
+					ft_strjoin.c \
 
-OBJ = $(SRC:%.c=%.o)
-FLAGS = -Wall -Werror -Wextra
+					OBJECTS = $(SRCS:.c=.o)
+BONUS_OBJECTS = $(BONUS_SRCS:.c=.o)
+
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+$(NAME): $(OBJECTS)
+	ar rc $(NAME) $(OBJECTS)
+	gcc $(CFLAGS) -c $(SRCS)
 
-clean: 
-	rm -f $(OBJ)
+bonus: $(BONUS_OBJECTS)
+	ar rc $(NAME) $(BONUS_OBJECTS)
+
+clean:
+	$(RM) $(OBJECTS) $(BONUS_OBJECTS)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
-re: fclean $(NAME)
+re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

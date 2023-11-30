@@ -12,38 +12,45 @@
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+int	ft_strncmp(const char	*s1, const char	*s2, size_t n)
 {
-	size_t		src_len;
-	size_t		copy_len;
-	const char	*src_ptr;
-	char		*dest_ptr;
-
-	src_len = ft_strlen(src);
-	if (src_len < size - 1)
-		copy_len = src_len;
-	else
-		copy_len = size - 1;
-	src_ptr = src;
-	dest_ptr = dest;
-	while (copy_len > 0)
+	while (n > 0 && *s1 != '\0' && *s2 != '\0')
 	{
-		*dest_ptr = *src_ptr;
-		dest_ptr++;
-		src_ptr++;
-		copy_len--;
+		if (*s1 != *s2)
+		{
+			return (*s1 - *s2);
+		}
+		s1++;
+		s2++;
+		n--;
 	}
-	*dest_ptr = '\0';
-	return (src_len);
+	if (n > 0 && *s1 != *s2)
+	{
+		return (*s1 - *s2);
+	}
+	return (0);
 }
+
 /*
 int main()
 {
-	char	source[] = "Hello, world!";
-	char destination[20];
-	size_t copied = ft_strlcpy(destination, source, sizeof(destination));
-	printf("Source: %s\n", source);
-	printf("Destination: %s\n", destination);
-	printf("Copied characters: %zu\n", copied);
-	return (0);
+    const char	*str1 = "Hello, world!";
+    const char	*str2 = "Hello, universe!";
+    size_t		n = 6;
+    int			result;
+
+    result = ft_strncmp(str1, str2, n);
+    if (result == 0)
+    {
+        printf("Las cadenas son iguales en los primeros %zu caracteres.\n", n);
+    }
+    else if (result < 0)
+    {
+        printf("La primera cadena es menor que la segunda.\n");
+    }
+    else
+    {
+        printf("La primera cadena es mayor que la segunda.\n");
+    }
+    return (0);
 }*/

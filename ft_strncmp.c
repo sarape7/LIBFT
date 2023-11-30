@@ -11,15 +11,14 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_strncmp(const char	*s1, const char	*s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (n > 0 && (*s1 != '\0' || *s2 != '\0'))
+	while (n)
 	{
-		if (*s1 != *s2)
-		{
-			return (*s1 - *s2);
-		}
+		if (*s1 != *s2 || (*s1 == '\0' || *s2 == '\0'))
+			return ((unsigned char)*s1 - (unsigned char)*s2);
 		s1++;
 		s2++;
 		n--;
@@ -27,28 +26,12 @@ int	ft_strncmp(const char	*s1, const char	*s2, size_t n)
 	return (0);
 }
 /*
-int	main()
+int main()
 {
-	const char	*str1;
-	const char	*str2;
-	size_t		n;
-	int			result;
+    char *s1 = "test\200";
+     char *s2 = "test\0";
+     size_t n = 6;
 
-	str1 = "Hello, world!";
-	str2 = "Hello, universe!";
-	n = 6;
-	result = ft_strncmp(str1, str2, n);
-	if (result == 0)
-	{
-		printf("Las cadenas son iguales en los primeros %zu caracteres.\n", n);
-	}
-	else if (result < 0)
-	{
-		printf("La primera cadena es menor que la segunda.\n");
-	}
-	else
-	{
-		printf("La primera cadena es mayor que la segunda.\n");
-	}
-	return (0);
+    printf("ft_%i\n", ft_strncmp(s1, s2, n));
+    return (0);
 }*/
