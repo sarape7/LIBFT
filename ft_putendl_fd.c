@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 11:50:11 by sarperez          #+#    #+#             */
-/*   Updated: 2023/12/02 17:42:44 by sarperez         ###   ########.fr       */
+/*   Created: 2023/12/02 17:02:06 by sarperez          #+#    #+#             */
+/*   Updated: 2023/12/02 18:03:36 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char			*d;
-	const char		*s;
-
-	if (!dest && !src)
-		return (NULL);
-	d = (char *)dest;
-	s = (const char *)src;
-	while (n > 0)
+	if (s)
 	{
-		*d = *s;
-		d++;
-		s++;
-		n--;
+		ft_putstr_fd(s, fd);
+		ft_putchar_fd('\n', fd);
 	}
-	return (dest);
 }
 
-/*
+/* 
 int main()
 {
-	char source[] = "Hello, world!";
-	char destination[20];
-	size_t n = 13;
-	ft_memcpy(destination, source, n);
-	printf("Cadena de destino: %s\n", destination);
+	char	*s;
+
+	s = "Hello world";
+	ft_putendl_fd(s, 1);
 	return (0);
-}*/
+} */

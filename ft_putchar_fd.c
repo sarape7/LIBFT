@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 11:50:11 by sarperez          #+#    #+#             */
-/*   Updated: 2023/12/02 17:42:44 by sarperez         ###   ########.fr       */
+/*   Created: 2023/12/02 16:15:43 by sarperez          #+#    #+#             */
+/*   Updated: 2023/12/02 16:30:07 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	char			*d;
-	const char		*s;
-
-	if (!dest && !src)
-		return (NULL);
-	d = (char *)dest;
-	s = (const char *)src;
-	while (n > 0)
-	{
-		*d = *s;
-		d++;
-		s++;
-		n--;
-	}
-	return (dest);
+	write(fd, &c, 1);
 }
 
 /*
 int main()
 {
-	char source[] = "Hello, world!";
-	char destination[20];
-	size_t n = 13;
-	ft_memcpy(destination, source, n);
-	printf("Cadena de destino: %s\n", destination);
-	return (0);
-}*/
+    char c = 'A';
+
+    ft_putchar_fd(c, 1);
+    ft_putchar_fd('\n', 1);
+
+    ft_putchar_fd(c, 2);
+    ft_putchar_fd('\n', 2);
+
+    return 0;
+}
+*/

@@ -1,43 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 11:50:11 by sarperez          #+#    #+#             */
-/*   Updated: 2023/12/02 17:42:44 by sarperez         ###   ########.fr       */
+/*   Created: 2023/12/02 17:26:53 by sarperez          #+#    #+#             */
+/*   Updated: 2023/12/02 17:41:09 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char			*d;
-	const char		*s;
+	char	*s;
 
-	if (!dest && !src)
-		return (NULL);
-	d = (char *)dest;
-	s = (const char *)src;
-	while (n > 0)
+	s = "0123456789";
+	if (n > 2147483647 || n < -2147483648)
+		return ;
+	if (n == -2147483648)
 	{
-		*d = *s;
-		d++;
-		s++;
-		n--;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (dest);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = n * -1;
+	}
+	if (n > 9)
+		ft_putnbr_fd(n / 10, fd);
+	write(fd, &s[n % 10], 1);
 }
 
-/*
-int main()
+/* int	main(void)
 {
-	char source[] = "Hello, world!";
-	char destination[20];
-	size_t n = 13;
-	ft_memcpy(destination, source, n);
-	printf("Cadena de destino: %s\n", destination);
-	return (0);
-}*/
+	int	n;
+
+	n = 2147483645;
+	ft_putnbr_fd(n, 1);
+}
+ */

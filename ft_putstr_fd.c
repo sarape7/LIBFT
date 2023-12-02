@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 11:50:11 by sarperez          #+#    #+#             */
-/*   Updated: 2023/12/02 17:42:44 by sarperez         ###   ########.fr       */
+/*   Created: 2023/12/02 16:40:32 by sarperez          #+#    #+#             */
+/*   Updated: 2023/12/02 17:23:38 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char			*d;
-	const char		*s;
+	int	i;
 
-	if (!dest && !src)
-		return (NULL);
-	d = (char *)dest;
-	s = (const char *)src;
-	while (n > 0)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		*d = *s;
-		d++;
-		s++;
-		n--;
+		ft_putchar_fd(s[i], fd);
+		i++;
 	}
-	return (dest);
 }
-
-/*
+/* 
 int main()
 {
-	char source[] = "Hello, world!";
-	char destination[20];
-	size_t n = 13;
-	ft_memcpy(destination, source, n);
-	printf("Cadena de destino: %s\n", destination);
-	return (0);
-}*/
+	char *s;
+
+	s = "SAta";
+
+	ft_putstr_fd(s, 1);
+} */

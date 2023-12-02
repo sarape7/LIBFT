@@ -6,7 +6,7 @@
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:13:21 by sarperez          #+#    #+#             */
-/*   Updated: 2023/11/30 15:40:57 by sarperez         ###   ########.fr       */
+/*   Updated: 2023/12/02 18:58:04 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 /*
 int	main()
 {
+	#include <stdio.h>
 	char dst[] = "oldstring";
 	const char src[]  = "newstring";
 
