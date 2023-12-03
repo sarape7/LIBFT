@@ -6,63 +6,50 @@
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 14:06:53 by sarperez          #+#    #+#             */
-/*   Updated: 2023/12/02 15:39:25 by sarperez         ###   ########.fr       */
+/*   Updated: 2023/12/03 17:52:30 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_fillstr(char *str, char const *s,
-char (*f)(unsigned int, char), unsigned int i)
-{
-	if (s[i])
-	{
-		str[i] = f(i, s[i]);
-		ft_fillstr(str, s, f, i + 1);
-	}
-	else
-		str[i] = '\0';
-}
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
-	size_t	len;
+	unsigned int	i;
+	char			*result;
 
-	if (!s || !f)
-		return (NULL);
-	len = ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	ft_fillstr(str, s, f, 0);
-	return (str);
+	i = 0;
+	result = malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (!result)
+		return (0);
+	ft_strlcpy(result, s, ft_strlen(s)+1);
+	while (result[i])
+	{
+		result[i] = (*f)(i, result[i]);
+		i++;
+	}
+	result[i] = '\0';
+	return (result);
 }
-
 /*
-#include <stdio.h>
-
-char my_func(unsigned int i, char c)
+char	funcion(unsigned int a, char c)
 {
-    return (i % 2) ? c : c - 32; // Convert every second character to uppercase
+	return (a + c);
 }
 
-int main()
+int	main()
 {
-    char const *s = "hello world";
-    char *str;
+	char	*s = "AAAA";
+	char	*result;
 
-    str = ft_strmapi(s, my_func);
-    if (str)
-    {
-        printf("Original string: '%s'\n", s);
-        printf("Transformed string: '%s'\n", str);
-        free(str);
-    }
-    else
-    {
-        printf("Failed to allocate memory for transformed string.\n");
-    }
-
-    return 0;
-}*/
+	printf("Original String: %s\n", s);
+	result = ft_strmapi(s, &funcion);
+	if (result != NULL)
+	{
+		printf("Mapped String: %s\n", result);
+		free(result);
+	}
+	else
+		printf("Error: ft_strmapi returned NULL.\n");
+	return (0);
+}
+*/
