@@ -6,7 +6,7 @@
 #    By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/26 12:49:34 by sarperez          #+#    #+#              #
-#    Updated: 2023/12/02 18:14:33 by sarperez         ###   ########.fr        #
+#    Updated: 2023/12/03 14:51:33 by sarperez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,10 +57,6 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	ar rc $(NAME) $(OBJECTS)
 	gcc $(CFLAGS) -c $(SRCS)
-
-#bonus: $(BONUS_OBJECTS)
-#	ar rc $(NAME) $(BONUS_OBJECTS)
-#	gcc $(CFLAGS) -c $(BONUS_SRCS)
 
 clean:
 	$(RM) $(OBJECTS) $(BONUS_OBJECTS)
