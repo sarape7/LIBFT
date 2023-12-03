@@ -6,13 +6,13 @@
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 15:46:48 by sarperez          #+#    #+#             */
-/*   Updated: 2023/10/13 13:19:22 by sarperez         ###   ########.fr       */
+/*   Updated: 2023/12/03 18:25:02 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	dest_len;
 	size_t	src_len;
@@ -20,23 +20,23 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	copy_len;
 	size_t	i;
 
-	dest_len = ft_strlen(dest);
+	dest_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
 	total_len = dest_len + src_len;
-	if (size <= dest_len)
+	if (dstsize <= dest_len)
 	{
-		return (src_len + size);
+		return (src_len + dstsize);
 	}
-	copy_len = size - dest_len - 1;
+	copy_len = dstsize - dest_len - 1;
 	if (copy_len > 0)
 	{
 		i = 0;
 		while (i < copy_len && src[i] != '\0')
 		{
-			dest[dest_len + i] = src[i];
+			dst[dest_len + i] = src[i];
 			i++;
 		}
-		dest[dest_len + i] = '\0';
+		dst[dest_len + i] = '\0';
 	}
 	return (total_len);
 }

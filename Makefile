@@ -6,7 +6,7 @@
 #    By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/26 12:49:34 by sarperez          #+#    #+#              #
-#    Updated: 2023/12/03 14:51:33 by sarperez         ###   ########.fr        #
+#    Updated: 2023/12/03 18:12:52 by sarperez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,6 @@ SRCS = 				ft_isalpha.c \
 					ft_putnbr_fd.c \
 					
 					OBJECTS = $(SRCS:.c=.o)
-BONUS_OBJECTS = $(BONUS_SRCS:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -66,4 +65,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: sarperez <sarperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 14:06:53 by sarperez          #+#    #+#             */
-/*   Updated: 2023/12/03 17:52:30 by sarperez         ###   ########.fr       */
+/*   Updated: 2023/12/03 18:26:05 by sarperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[i] = '\0';
 	return (result);
 }
-/*
+/* 
 char	funcion(unsigned int a, char c)
 {
 	return (a + c);
@@ -52,4 +52,4 @@ int	main()
 		printf("Error: ft_strmapi returned NULL.\n");
 	return (0);
 }
-*/
+ */
